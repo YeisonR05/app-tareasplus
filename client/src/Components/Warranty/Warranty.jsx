@@ -6,7 +6,7 @@ const Warranty = () => {
   const subscriptionPlans = [
     {
       title: "ENTRE 3.0 Y 5.0",
-      features: ["La garantía no se aplica en este caso, ya que nuestra política de garantía establece que solo es válida cuando la calificación obtenida es inferior a 3.0. No obstante, nuestro objetivo siempre es obtener la calificación más alta posible. 📝"],
+      features: ["La garantía no se aplica en este caso, ya que nuestra política de garantía establece que solo es válida cuando la calificación obtenida es inferior a 3.0. No obstante, nuestro objetivo siempre brindarte el mejor servicio y obtener la calificación más alta posible. 📝"],
       icon: <BsCheckCircle className="text-6xl rounded-full bg-[#18E4BE]" />
     },
     {
