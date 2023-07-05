@@ -6,12 +6,12 @@ const Warranty = () => {
   const subscriptionPlans = [
     {
       title: "ENTRE 3.0 Y 5.0",
-      features: ["NO APLICA GARANTÍA, ya que nuestra garantía aplique solo con una nota igual o inferior a 3.0. Sin embargo, siempre buscamos obtener la mayor calificación 📝"],
+      features: ["La garantía no se aplica en este caso, ya que nuestra política de garantía establece que solo es válida cuando la calificación obtenida es inferior a 3.0. No obstante, nuestro objetivo siempre es obtener la calificación más alta posible. 📝"],
       icon: <BsCheckCircle className="text-6xl rounded-full bg-[#18E4BE]" />
     },
     {
       title: "MENOS DE 2.9",
-      features: ["Te devolvemos el 100 % de tu dinero y nos enfocaremos aún más en la próxima 📝"],
+      features: ["En caso de no cumplir con el objetivo de nuestros servicios, ofrecemos un reembolso completo para asegurar tu satisfacción. Además, nos comprometemos a analizar cuidadosamente cualquier retroalimentación recibida y enfocarnos en mejoras significativas en futuras interacciones para brindarte una experiencia aún más satisfactoria. 📝"],
       icon: <MdOutlineErrorOutline className="text-6xl rounded-full bg-[#FF0000]" />
     },
   ];
@@ -27,11 +27,11 @@ const Warranty = () => {
         </p>
       </div>
 
-      <div className="flex justify-center mt-8">
+      <div className="flex justify-center mt-12">
         {subscriptionPlans.map((plan, index) => (
           <div
             key={index}
-            className="w-[550px] h-[340px] rounded-lg shadow-xl p-4 mx-8 cursor-pointer bg-gray-50 hover:shadow-md"
+            className="w-[480px] h-[360px] rounded-lg shadow-xl p-4 mx-8 cursor-pointer bg-gray-50 hover:shadow-md"
           >
             {plan.icon}
             <h2 className="text-lg font-bold mb-4 ml-0 text-left text-black mt-3">
@@ -39,7 +39,7 @@ const Warranty = () => {
             </h2>
             <ul className="text-black text-start ">
               {plan.features.map((feature, index) => (
-                <li key={index} className="mt-4">
+                <li key={index} className="mt-4 text-justify">
                   {feature}
                 </li>
               ))}

@@ -33,7 +33,7 @@ const Home = () => {
               </ul>
               <ul className="text-black text-start mt-2">
                 {plan.features.map((feature, index) => (
-                  <li key={index} className="mt-6">
+                  <li key={index} className="mt-6 text-lg text-justify">
                     {feature}
                   </li>
                 ))}
