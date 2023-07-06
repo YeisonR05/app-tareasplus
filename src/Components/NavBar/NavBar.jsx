@@ -32,13 +32,18 @@ const NavBar = () => {
         </div>
         {isMobile ? (
           // Mobile navigation
-          <MobileNav />
+          <>
+            <MobileNavToggle />
+            <ContactButton />
+          </>
         ) : (
           // Desktop navigation
           <DesktopNav />
         )}
-        <ContactButton />
       </div>
+      {isMobile && (
+        <MobileNav /> // Mostrar el MobileNav fuera del contenedor principal de la barra de navegación
+      )}
     </nav>
   );
 };
@@ -53,7 +58,7 @@ const DesktopNav = () => (
   </div>
 );
 
-const MobileNav = () => {
+const MobileNavToggle = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const toggleNav = () => {
@@ -61,22 +66,26 @@ const MobileNav = () => {
   };
 
   return (
-    <div>
-      <button className="text-black text-base" onClick={toggleNav}>
-        Menu
-      </button>
-      {isNavOpen && (
-        <div className="flex flex-col gap-10">
-          <NavItem href="/" text="Inicio" />
-          <NavItem href="/services" text="Servicios" />
-          <NavItem href="/metodology" text="Metodología" />
-          <NavItem href="/priceswarranty" text="Precios y Garantía" />
-          <NavItem href="/about" text="Acerca de Nosotros" />
-        </div>
-      )}
+    <button className="text-black text-base" onClick={toggleNav}>
+      Menu
+    </button>
+  );
+};
+
+const MobileNav = () => {
+  return (
+    <div className="bg-[#18E4BE] pt-[1rem] pb-[0.5rem]">
+      <div className="flex flex-col gap-10 items-center">
+        <NavItem href="/" text="Inicio" />
+        <NavItem href="/services" text="Servicios" />
+        <NavItem href="/metodology" text="Metodología" />
+        <NavItem href="/priceswarranty" text="Precios y Garantía" />
+        <NavItem href="/about" text="Acerca de Nosotros" />
+      </div>
     </div>
   );
 };
 
 export default NavBar;
+
 
