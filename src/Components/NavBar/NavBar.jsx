@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import Logo from "../../Multimedia/Logo.png";
@@ -52,12 +53,30 @@ const DesktopNav = () => (
   </div>
 );
 
-const MobileNav = () => (
-  // You can customize the mobile navigation menu according to your needs
-  <div>
-    <button className="text-white">Menu</button>
-    {/* Add a dropdown menu or any other mobile-specific navigation */}
-  </div>
-);
+const MobileNav = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
+  return (
+    <div>
+      <button className="text-black text-base" onClick={toggleNav}>
+        Menu
+      </button>
+      {isNavOpen && (
+        <div className="flex flex-col gap-10">
+          <NavItem href="/" text="Inicio" />
+          <NavItem href="/services" text="Servicios" />
+          <NavItem href="/metodology" text="Metodología" />
+          <NavItem href="/priceswarranty" text="Precios y Garantía" />
+          <NavItem href="/about" text="Acerca de Nosotros" />
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default NavBar;
+
