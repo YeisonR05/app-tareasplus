@@ -3,7 +3,6 @@ import { FaWhatsapp, FaTiktok} from 'react-icons/fa';
 import { AiOutlineInstagram } from 'react-icons/ai';
 import { GoPersonAdd } from 'react-icons/go'
 
-
 const ContactButton = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -25,7 +24,7 @@ const ContactButton = () => {
         CONTÁCTANOS
       </button>
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-gray-100 rounded-lg shadow-lg z-10 pb-3">
+        <div className="absolute right-0 mt-2 w-48 sm:w-56 bg-gray-100 rounded-lg shadow-lg z-10 pb-3">
           <a
             href="https://www.instagram.com/tareasplus0/"
             target="_blank"
@@ -33,7 +32,7 @@ const ContactButton = () => {
             className="block text-gray-800 hover:bg-gray-100 flex pb-2 mt-2"
             onClick={handleOptionClick}
           >
-            <div className='px-4 flex justify-center'>
+            <div className="px-4 flex justify-center">
               <AiOutlineInstagram size={20} />
             </div>
             Instagram
@@ -45,7 +44,7 @@ const ContactButton = () => {
             className="block text-gray-800 hover:bg-gray-100 flex pb-2 mt-2"
             onClick={handleOptionClick}
           >
-            <div className='px-4 flex justify-center'>
+            <div className="px-4 flex justify-center">
               <FaWhatsapp size={20} />
             </div>
              WhatsApp
@@ -57,7 +56,7 @@ const ContactButton = () => {
             className="block text-gray-800 hover:bg-gray-100 flex pb-2 mt-2"
             onClick={handleOptionClick}
           >
-            <div className='px-4 flex justify-center'>
+            <div className="px-4 flex justify-center">
               <FaTiktok size={20} />
             </div>
              TikTok
