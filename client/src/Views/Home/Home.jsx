@@ -27,7 +27,7 @@ const Home = () => {
               <ul className="text-black text-start">
                 {plan.text.map((text, index) => (
                   <li key={index} className="mt-2 text-2xl text-teal-600">
-                    {text}
+                    {text} 
                   </li>
                 ))}
               </ul>
