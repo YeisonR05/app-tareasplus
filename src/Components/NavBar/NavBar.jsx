@@ -15,6 +15,17 @@ function NavItem({ href, text }) {
   );
 }
 
+function NavItemMobile({ href, text }) {
+  return (
+    <NavLink
+      to={href}
+      className="text-black text-xs "
+    >
+      {text}
+    </NavLink>
+  );
+}
+
 const NavBar = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -39,7 +50,7 @@ const NavBar = () => {
           // Mobile navigation
           <>
             <button
-              className="text-black text-base font-bold hover:text-gray-800"
+              className="text-black font-bold hover:text-gray-800"
               onClick={toggleNav}
             >
               Menu
@@ -71,19 +82,19 @@ const DesktopNav = () => (
 const MobileNav = () => (
   <div className="text-xxs absolute mt-40 w-35 sm:w-35 bg-gray-100 rounded-lg shadow-lg z-10">
     <div >
-      <NavItem href="/" text="Inicio" />
+      <NavItemMobile href="/" text="Inicio" />
     </div>
     <div>
-      <NavItem href="/services" text="Servicios" />
+      <NavItemMobile href="/services" text="Servicios" />
     </div>
     <div>
-      <NavItem href="/metodology" text="Metodología" />
+      <NavItemMobile href="/metodology" text="Metodología" />
     </div>
     <div>
-      <NavItem href="/priceswarranty" text="Precios y Garantía" />
+      <NavItemMobile href="/priceswarranty" text="Precios y Garantía" />
     </div>
     <div>
-      <NavItem href="/about" text="Acerca de Nosotros" />
+      <NavItemMobile href="/about" text="Acerca de Nosotros" />
     </div>
   </div>
 );
