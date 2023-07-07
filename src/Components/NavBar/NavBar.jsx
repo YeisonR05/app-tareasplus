@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import Logo from "../../Multimedia/Logo.png";
 import ContactButton from "../ContactButton/ContactButton";
-import {BiMenu} from 'react-icons/bi'
+import { BiMenu } from "react-icons/bi";
 
 function NavItem({ href, text }) {
   return (
@@ -27,9 +27,20 @@ function NavItemMobile({ href, text }) {
 const NavBar = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
+    setIsSubMenuOpen(false);
+  };
+
+  const toggleSubMenu = () => {
+    setIsSubMenuOpen(!isSubMenuOpen);
+  };
+
+  const closeNav = () => {
+    setIsNavOpen(false);
+    setIsSubMenuOpen(false);
   };
 
   return (
@@ -42,9 +53,9 @@ const NavBar = () => {
               onClick={toggleNav}
             >
               <div className="px-4 flex justify-center">
-              <BiMenu size={20} />
+                <BiMenu size={20} />
               </div>
-              Menu
+              Menú
             </button>
           )}
           <NavLink to="/" className="w-[55px] h-[55px] ml-auto">
@@ -57,7 +68,7 @@ const NavBar = () => {
         </div>
         {isMobile ? (
           // Mobile navigation
-          isNavOpen && <MobileNav />
+          isNavOpen && <MobileNav isSubMenuOpen={isSubMenuOpen} toggleSubMenu={toggleSubMenu} closeNav={closeNav} />
         ) : (
           // Desktop navigation
           <DesktopNav />
@@ -78,11 +89,10 @@ const DesktopNav = () => (
   </div>
 );
 
-const MobileNav = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleSubMenu = () => {
-    setIsOpen(!isOpen);
+const MobileNav = ({ isSubMenuOpen, toggleSubMenu, closeNav }) => {
+  const closeSubMenu = () => {
+    toggleSubMenu();
+    closeNav();
   };
 
   return (
@@ -96,18 +106,22 @@ const MobileNav = () => {
       <div className="mt-1">
         <NavItemMobile href="/metodology" text="Metodología" />
       </div>
-      <div className={`mt-1 ${isOpen ? 'block' : 'hidden'}`}>
-        <NavItemMobile href="/priceswarranty" text="Precios y Garantía" />
-      </div>
-      <div className={`mt-1 ${isOpen ? 'block' : 'hidden'}`}>
-        <NavItemMobile href="/about" text="Acerca de Nosotros" />
-      </div>
+      {isSubMenuOpen && (
+        <>
+          <div className={`mt-1`}>
+            <NavItemMobile href="/priceswarranty" text="Precios y Garantía" />
+          </div>
+          <div className={`mt-1`}>
+            <NavItemMobile href="/about" text="Acerca de Nosotros" />
+          </div>
+        </>
+      )}
       <div className="mt-1">
         <button
           className="text-black text-base font-bold hover:text-gray-800"
-          onClick={toggleSubMenu}
+          onClick={isSubMenuOpen ? closeSubMenu : toggleSubMenu}
         >
-          {isOpen ? 'Cerrar' : 'Ver más'}
+          {isSubMenuOpen ? 'Cerrar' : 'Ver más'}
         </button>
       </div>
     </div>
@@ -115,5 +129,3 @@ const MobileNav = () => {
 };
 
 export default NavBar;
-
-
