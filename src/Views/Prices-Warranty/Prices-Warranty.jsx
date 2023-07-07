@@ -33,24 +33,24 @@ const PricesWarranty = () => {
 
   return (
     <div className="flex flex-col items-center mb-4 mt-3 ">
-      <div className="">
-        <h1 className="font-bold text-black">LOS PRECIOS DE TAREAS PLUS</h1>
-        <p className="font-bold text-2xl text-black">
+      <div className="text-center">
+        <h1 className="font-bold text-black text-2xl lg:text-4xl">LOS PRECIOS DE TAREAS PLUS</h1>
+        <p className="font-bold text-xl text-black">
           Se ajustan al desarrollo de tus trabajos
         </p>
       </div>
 
-      <div className="flex justify-center mt-12 border-b border-black">
+      <div className="flex flex-wrap justify-center mt-8">
         {subscriptionPlans.map((plan, index) => (
           <div
             key={index}
-            className="w-[330px] h-[440px] rounded-lg shadow-xl p-6 mx-6 cursor-pointer bg-gray-50  hover:shadow-md mb-8"
+            className="w-full md:w-[330px] lg:w-[440px] rounded-lg shadow-xl p-6 m-4 cursor-pointer bg-gray-50  hover:shadow-md mb-8"
           >
             <h2 className="text-lg font-bold mb-4 ml-0 text-left text-black">
               {plan.title}
             </h2>
             <div className="text-left pb-5">
-              <span className="text-3xl font-bold text-black border-b border-black pb-3 ">
+              <span className="text-2xl lg:text-3xl font-bold text-black border-b border-black pb-3 ">
                 {plan.price[selectedCurrency]}
               </span>
             </div>
@@ -63,7 +63,7 @@ const PricesWarranty = () => {
               ))}
             </ul>
             <button
-              className="bg-[#18E4BE] hover:bg-[#139980] text-black font-bold py-2 px-10 rounded mt-12"
+              className="bg-[#18E4BE] hover:bg-[#139980] text-black font-bold py-2 px-6 lg:px-10 rounded mt-8 lg:mt-12"
               onClick={handleWhatsApp}
             >
               {selectedPlan === index ? "ESCRÍBENOS" : "ESCRÍBENOS"}
@@ -79,4 +79,3 @@ const PricesWarranty = () => {
 };
 
 export default PricesWarranty;
-

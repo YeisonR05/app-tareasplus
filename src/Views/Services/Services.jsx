@@ -6,7 +6,7 @@ import Details from "../../Components/Details/Details";
 
 const Services = () => {
   const [showDetails, setShowDetails] = useState(false);
-  const detailsRef = useRef(null); 
+  const detailsRef = useRef(null);
 
   const subscriptionPlans = [
     {
@@ -31,43 +31,43 @@ const Services = () => {
 
   const handleShowDetails = () => {
     setShowDetails(true);
-    detailsRef.current.scrollIntoView({ behavior: 'smooth' }); 
+    detailsRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <div className="flex flex-col items-center mb-4 mt-5">
-      <div className="">
-        <h1 className="font-bold text-black">SERVICIO DE APOYO ACADÉMICO</h1>
-        <p className="bg-gray-30 font-bold text-3xl mt-4 text-teal-600">
-          TAREAS PLUS 
+      <div className="text-center">
+        <h1 className="font-bold text-black text-2xl lg:text-4xl">SERVICIO DE APOYO ACADÉMICO</h1>
+        <p className="bg-gray-300 font-bold text-xl lg:text-3xl mt-4 text-teal-600">
+          TAREAS PLUS
         </p>
-        <p className="bg-gray-30 font-bold text-black text-teal-600">
+        <p className="bg-gray-300 font-bold text-black text-xl lg:text-3xl text-teal-600">
           Lo hacemos por ti
         </p>
       </div>
 
-      <div className="flex justify-center mt-8">
+      <div className="flex flex-wrap justify-center mt-8">
         {subscriptionPlans.map((plan, index) => (
           <div
             key={index}
-            className="w-[350px] h-[450px] rounded-lg shadow-xl p-4 mx-8 cursor-pointer bg-gray-50 hover:shadow-md flex flex-col items-start"
+            className="w-full md:w-[350px] lg:w-[450px] rounded-lg shadow-xl p-4 m-4 cursor-pointer bg-gray-50 hover:shadow-md flex flex-col items-center"
           >
             <div className="flex items-center">
               <div>
                 {plan.icon}
               </div>
-              <h2 className="text-lg font-bold text-black">
+              <h2 className="text-lg font-bold text-black ml-2 text-center">
                 {plan.title}
               </h2>
             </div>
-            <ul className="text-black text-start">
+            <ul className="text-black text-start mt-4">
               {plan.features.map((feature, index) => (
-                <li key={index} className="mt-4">
+                <li key={index} className="mt-2 text-sm lg:text-base">
                   {feature}
                 </li>
               ))}
               {plan.features2.map((feature, index) => (
-                <li key={index} className="mt-4">
+                <li key={index} className="mt-2 text-sm lg:text-base flex items-center">
                   <FcApproval className="inline-block mr-3" />
                   {feature}
                 </li>
@@ -75,7 +75,7 @@ const Services = () => {
             </ul>
             <Link to="" onClick={handleShowDetails}>
               <button
-                className="bg-[#18E4BE] hover:bg-[#139980] text-black font-bold py-2 px-4 rounded mt-8"
+                className="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded mt-8"
               >
                 Ver Detalles
               </button>
@@ -91,3 +91,4 @@ const Services = () => {
 };
 
 export default Services;
+

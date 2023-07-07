@@ -20,44 +20,44 @@ const Details = () => {
       icon: <FcIdea className="text-6xl mr-1" />
     },
     {
-        title: "ESTADÍSTICA",
-        features: ["Estadísica Descriptiva", "Estadística Inferencial", "Bioestadística", "Casos Aplicados", "Probabilidad", "Métodos Estadísticos"],
-        icon: <FcStatistics className="text-6xl mr-2" />
-      },
-      {
-        title: "ECONOMÍA",
-        features: ["Microeconomía", "Macroecoconmía", "Finanzas", "Costos"],
-        icon: <FcBullish className="text-6xl mr-2" />
-      },
+      title: "ESTADÍSTICA",
+      features: ["Estadísica Descriptiva", "Estadística Inferencial", "Bioestadística", "Casos Aplicados", "Probabilidad", "Métodos Estadísticos"],
+      icon: <FcStatistics className="text-6xl mr-2" />
+    },
+    {
+      title: "ECONOMÍA",
+      features: ["Microeconomía", "Macroecoconmía", "Finanzas", "Costos"],
+      icon: <FcBullish className="text-6xl mr-2" />
+    },
   ];
 
   return (
     <div className="flex flex-col items-center mb-4 mt-5">
-      <div className="">
-      <img
-              src={Logo}
-              alt="TAREASPLUS"
-              className="w-[100px] h-[80px] flex items-center justify-center"
-            />
+      <div className="text-center">
+        <img
+          src={Logo}
+          alt="TAREASPLUS"
+          className="w-[100px] h-[80px] flex items-center justify-center"
+        />
       </div>
 
-      <div className="flex justify-center mt-8">
+      <div className="flex flex-wrap justify-center mt-8">
         {subscriptionPlans.map((plan, index) => (
           <div
             key={index}
-            className="w-[240px] h-[490px] rounded-lg shadow-xl p-4 mx-2 cursor-pointer bg-gray-50 hover:shadow-md flex flex-col items-start"
+            className="w-full md:w-[240px] lg:w-[320px] rounded-lg shadow-xl p-4 m-4 cursor-pointer bg-gray-50 hover:shadow-md flex flex-col items-center"
           >
             <div className="flex items-center">
               <div>
                 {plan.icon}
               </div>
-              <h2 className="text-X1 font-bold text-black">
+              <h2 className="text-xl font-bold text-black ml-2 text-center">
                 {plan.title}
               </h2>
             </div>
             <ul className="text-black text-start mt-2">
               {plan.features.map((feature, index) => (
-                <li key={index} className="mt-2">
+                <li key={index} className="mt-2 text-sm">
                   <FcApproval className="inline-block mr-3" />
                   {feature}
                 </li>
@@ -71,6 +71,3 @@ const Details = () => {
 };
 
 export default Details;
-
-
-
