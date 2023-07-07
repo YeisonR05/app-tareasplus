@@ -3,7 +3,7 @@ window.env = {
   "ALLUSERSPROFILE": "C:\\ProgramData",
   "APPDATA": "C:\\Users\\Yeison\\AppData\\Roaming",
   "asl.log": "Destination=file",
-  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\LOCAL\\crashpad_6912_WTWGQGVYEPRMPKVS",
+  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\LOCAL\\crashpad_5252_MABFMJOYFQPKXNFS",
   "COLOR": "1",
   "COLORTERM": "truecolor",
   "COMMONPROGRAMFILES": "C:\\Program Files\\Common Files",
@@ -98,7 +98,7 @@ window.env = {
   "VSCODE_GIT_ASKPASS_EXTRA_ARGS": "--ms-enable-electron-run-as-node",
   "VSCODE_GIT_ASKPASS_MAIN": "c:\\Users\\Yeison\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass-main.js",
   "VSCODE_GIT_ASKPASS_NODE": "C:\\Users\\Yeison\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
-  "VSCODE_GIT_IPC_HANDLE": "\\\\.\\pipe\\vscode-git-8e76240042-sock",
+  "VSCODE_GIT_IPC_HANDLE": "\\\\.\\pipe\\vscode-git-8eedf998a9-sock",
   "WINDIR": "C:\\Windows",
   "_": "C:/Program Files/nodejs/node.exe"
 };

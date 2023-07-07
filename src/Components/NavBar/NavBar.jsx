@@ -5,7 +5,7 @@ import Logo from "../../Multimedia/Logo.png";
 import ContactButton from "../ContactButton/ContactButton";
 
 function NavItem({ href, text }) {
-  return (  
+  return (
     <NavLink
       to={href}
       className="text-black text-base font-bold hover:text-gray-800"
@@ -17,6 +17,11 @@ function NavItem({ href, text }) {
 
 const NavBar = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
 
   return (
     <nav className="bg-[#18E4BE] p-[0.7rem] sticky top-0 z-10">
@@ -32,7 +37,17 @@ const NavBar = () => {
         </div>
         {isMobile ? (
           // Mobile navigation
-          <MobileNav />
+          <>
+            <button
+              className="text-black text-base font-bold hover:text-gray-800"
+              onClick={toggleNav}
+            >
+              Menu
+            </button>
+            {isNavOpen && (
+              <MobileNav />
+            )}
+          </>
         ) : (
           // Desktop navigation
           <DesktopNav />
@@ -53,30 +68,26 @@ const DesktopNav = () => (
   </div>
 );
 
-const MobileNav = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
-
-  const toggleNav = () => {
-    setIsNavOpen(!isNavOpen);
-  };
-
-  return (
-    <div>
-      <button className="text-black text-base" onClick={toggleNav}>
-        Menu
-      </button>
-      {isNavOpen && (
-        <div className="flex flex-col gap-10">
-          <NavItem href="/" text="Inicio" />
-          <NavItem href="/services" text="Servicios" />
-          <NavItem href="/metodology" text="Metodología" />
-          <NavItem href="/priceswarranty" text="Precios y Garantía" />
-          <NavItem href="/about" text="Acerca de Nosotros" />
-        </div>
-      )}
+const MobileNav = () => (
+  <div className="text-xxs absolute mt-40 w-35 sm:w-35 bg-gray-100 rounded-lg shadow-lg z-10">
+    <div >
+      <NavItem href="/" text="Inicio" />
     </div>
-  );
-};
+    <div>
+      <NavItem href="/services" text="Servicios" />
+    </div>
+    <div>
+      <NavItem href="/metodology" text="Metodología" />
+    </div>
+    <div>
+      <NavItem href="/priceswarranty" text="Precios y Garantía" />
+    </div>
+    <div>
+      <NavItem href="/about" text="Acerca de Nosotros" />
+    </div>
+  </div>
+);
+
 
 export default NavBar;
 
