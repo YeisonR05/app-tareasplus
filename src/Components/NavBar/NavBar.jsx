@@ -53,9 +53,8 @@ const NavBar = () => {
               onClick={toggleNav}
             >
               <div className="px-4 flex justify-center">
-                <BiMenu size={20} />
+                <BiMenu size={25} />
               </div>
-              Menú
             </button>
           )}
           <NavLink to="/" className="w-[55px] h-[55px] ml-auto">
