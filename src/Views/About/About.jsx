@@ -56,7 +56,7 @@ const About = () => {
             Whatsapp: +57 3177619058
             <br />
             Email: infotareasplus0@gmail.com
-          </div>
+          </div> 
         </div>
       </div>
     </div>
