@@ -22,11 +22,7 @@ function NavItemMobile({ href, text, closeNav }) {
   };
 
   return (
-    <NavLink
-      to={href}
-      className="text-black text-xm"
-      onClick={handleClick}
-    >
+    <NavLink to={href} className="text-black text-xm" onClick={handleClick}>
       {text}
     </NavLink>
   );
@@ -35,20 +31,13 @@ function NavItemMobile({ href, text, closeNav }) {
 const NavBar = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
-    setIsSubMenuOpen(false);
-  };
-
-  const toggleSubMenu = () => {
-    setIsSubMenuOpen(!isSubMenuOpen);
   };
 
   const closeNav = () => {
     setIsNavOpen(false);
-    setIsSubMenuOpen(false);
   };
 
   return (
@@ -75,13 +64,7 @@ const NavBar = () => {
         </div>
         {isMobile ? (
           // Mobile navigation
-          isNavOpen && (
-            <MobileNav
-              isSubMenuOpen={isSubMenuOpen}
-              toggleSubMenu={toggleSubMenu}
-              closeNav={closeNav}
-            />
-          )
+          isNavOpen && <MobileNav closeNav={closeNav} />
         ) : (
           // Desktop navigation
           <DesktopNav />
@@ -102,11 +85,7 @@ const DesktopNav = () => (
   </div>
 );
 
-const MobileNav = ({ isSubMenuOpen, toggleSubMenu, closeNav }) => {
-  const closeSubMenu = () => {
-    toggleSubMenu();
-    closeNav();
-  };
+const MobileNav = ({ closeNav }) => {
 
   return (
     <div className="text-xxs absolute left-0 top-16 w-48 sm:w-56 bg-gray-100 rounded-lg shadow-lg z-10">
@@ -127,31 +106,19 @@ const MobileNav = ({ isSubMenuOpen, toggleSubMenu, closeNav }) => {
           closeNav={closeNav}
         />
       </div>
-      {isSubMenuOpen && (
-        <>
-          <div className={`mt-1`}>
-            <NavItemMobile
-              href="/priceswarranty"
-              text="Precios y Garantía"
-              closeNav={closeNav}
-            />
-          </div>
-          <div className={`mt-1`}>
-            <NavItemMobile
-              href="/about"
-              text="Acerca de Nosotros"
-              closeNav={closeNav}
-            />
-          </div>
-        </>
-      )}
-      <div className="mt-1">
-        <button
-          className="text-black text-base font-bold hover:text-gray-800"
-          onClick={isSubMenuOpen ? closeSubMenu : toggleSubMenu}
-        >
-          {isSubMenuOpen ? "Cerrar" : "Ver más"}
-        </button>
+      <div className={`mt-1`}>
+        <NavItemMobile
+          href="/priceswarranty"
+          text="Precios y Garantía"
+          closeNav={closeNav}
+        />
+      </div>
+      <div className={`mt-1`}>
+        <NavItemMobile
+          href="/about"
+          text="Acerca de Nosotros"
+          closeNav={closeNav}
+        />
       </div>
     </div>
   );
