@@ -37,20 +37,14 @@ const Services = () => {
   return (
     <div className="flex flex-col items-center mb-4 mt-5">
       <div className="text-center">
-        <h1 className="font-bold text-black text-2xl lg:text-4xl">SERVICIO DE APOYO ACADÉMICO</h1>
-        <p className="bg-gray-300 font-bold text-xl lg:text-3xl mt-4 text-teal-600">
-          TAREAS PLUS
-        </p>
-        <p className="bg-gray-300 font-bold text-black text-xl lg:text-3xl text-teal-600">
-          Lo hacemos por ti
-        </p>
+        <h1 className="font-bold text-black text-2xl lg:text-3xl">SERVICIO DE APOYO ACADÉMICO</h1>
       </div>
 
-      <div className="flex flex-wrap justify-center mt-8">
+      <div className="flex flex-wrap justify-center mt-2">
         {subscriptionPlans.map((plan, index) => (
           <div
             key={index}
-            className="w-full md:w-[350px] lg:w-[380px] rounded-lg shadow-xl p-4 m-4 cursor-pointer bg-gray-50 hover:shadow-md flex flex-col items-center"
+            className=" md:w-[450px] lg:w-[350px] rounded-lg shadow-xl p-4 m-4 cursor-pointer bg-gray-50 hover:shadow-md flex flex-col items-center"
           >
             <div className="flex items-center">
               <div>
