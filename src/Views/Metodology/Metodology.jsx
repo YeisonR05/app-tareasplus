@@ -13,30 +13,30 @@ const Metodology = () => {
   ];
 
   const handleWhatsApp = () => {
-    const phoneNumber = "+573177619058"; 
-    const message = "Hola"; 
+    const phoneNumber = "+573177619058";
+    const message = "Hola";
     const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };
 
   return (
-    <div className="flex">
-      <div className="w-1/2">
+    <div className="flex flex-col md:flex-row">
+      <div className="md:w-1/2">
         <div className="p-4">
-          <div className="w-[550px] h-[550px] p-4 mx-auto cursor-pointer">
-            <img
-              src={FotoMetodology}
-              alt="TAREASPLUS"
-              className="object-contain w-full h-full"
-            />
+          <div className="w-full h-[300px] md:h-[550px] mx-autocursor-pointer">
+              <img
+                src={FotoMetodology}
+                alt="TAREASPLUS"
+                className="object-contain w-full h-auto"
+              />
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center mt-8">
+      <div className="flex flex-col items-center justify-center mt-8 md:mt-0 md:w-1/2">
         {subscriptionPlans.map((plan, index) => (
           <div
             key={index}
-            className="w-[540px] h-[550px] p-4 cursor-pointer mb-8"
+            className="w-full h-auto p-4 cursor-pointer mb-8 md:max-w-md"
           >
             <div className="flex items-center">
               <h2 className="text-4xl font-bold text-black text-teal-600 mt-6">
@@ -52,19 +52,20 @@ const Metodology = () => {
             </ul>
             <ul className="text-black text-start mt-2">
               {plan.features.map((feature, index) => (
-                <li key={index} className="mt-6 text-xl">
+                <li key={index} className="mt-6 text-xl flex items-center">
                   <BsCheckCircle className="inline-block mr-3 rounded-full bg-[#18E4BE]" />
                   {feature}
                 </li>
               ))}
             </ul>
-              <div>
-                <button
+            <div>
+              <button
                 className="bg-teal-600 hover:bg-[#139980] text-black font-bold py-2 px-4 rounded mt-8"
-                onClick={handleWhatsApp} >
-                  COTIZA CON NOSOTROS
-                </button>
-              </div>
+                onClick={handleWhatsApp}
+              >
+                COTIZA CON NOSOTROS
+              </button>
+            </div>
           </div>
         ))}
       </div>
@@ -73,5 +74,7 @@ const Metodology = () => {
 }
 
 export default Metodology;
+
+
 
 

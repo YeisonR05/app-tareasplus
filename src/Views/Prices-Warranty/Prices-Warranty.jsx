@@ -44,7 +44,7 @@ const PricesWarranty = () => {
         {subscriptionPlans.map((plan, index) => (
           <div
             key={index}
-            className="w-full md:w-[330px] lg:w-[440px] rounded-lg shadow-xl p-6 m-4 cursor-pointer bg-gray-50  hover:shadow-md mb-8"
+            className="w-full md:w-[330px] lg:w-[380px] rounded-lg shadow-xl p-6 m-4 cursor-pointer bg-gray-50  hover:shadow-md mb-8"
           >
             <h2 className="text-lg font-bold mb-4 ml-0 text-left text-black">
               {plan.title}

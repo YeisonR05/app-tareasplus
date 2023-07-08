@@ -50,7 +50,7 @@ const Services = () => {
         {subscriptionPlans.map((plan, index) => (
           <div
             key={index}
-            className="w-full md:w-[350px] lg:w-[450px] rounded-lg shadow-xl p-4 m-4 cursor-pointer bg-gray-50 hover:shadow-md flex flex-col items-center"
+            className="w-full md:w-[350px] lg:w-[380px] rounded-lg shadow-xl p-4 m-4 cursor-pointer bg-gray-50 hover:shadow-md flex flex-col items-center"
           >
             <div className="flex items-center">
               <div>
