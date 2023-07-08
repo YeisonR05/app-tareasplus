@@ -27,7 +27,7 @@ const WhatsAppButton = ({ number }) => {
       )}
       onClick={handleClick}
     >
-      <FaWhatsapp size={40} />
+      <FaWhatsapp size={30} />
     </button>
   );
 };
