@@ -31,7 +31,7 @@ const Warranty = () => {
         {subscriptionPlans.map((plan, index) => (
           <div
             key={index}
-            className="w-full md:w-[480px] lg:w-[580px] rounded-lg shadow-xl p-4 m-4 cursor-pointer bg-gray-50 hover:shadow-md"
+            className="w-full md:w-[480px] lg:w-[480px] rounded-lg shadow-xl p-4 m-4 cursor-pointer bg-gray-50 hover:shadow-md"
           >
             <div className="flex justify-center">
               {plan.icon}
@@ -39,7 +39,7 @@ const Warranty = () => {
             <h2 className="text-lg font-bold mb-4 ml-0 text-left text-black mt-3">
               {plan.title}
             </h2>
-            <ul className="text-black text-start">
+            <ul className="text-black text-start ">
               {plan.features.map((feature, index) => (
                 <li key={index} className="mt-4 text-justify">
                   {feature}
