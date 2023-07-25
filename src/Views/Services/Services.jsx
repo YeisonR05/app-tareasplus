@@ -61,7 +61,7 @@ const Services = () => {
                 </li>
               ))}
               {plan.features2.map((feature, index) => (
-                <li key={index} className="mt-2 text-sm lg:text-base flex items-center">
+                <li key={index} className="mt-4 text-sm lg:text-base flex items-center">
                   <FcApproval className="inline-block mr-3" />
                   {feature}
                 </li>

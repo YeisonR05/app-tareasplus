@@ -45,7 +45,7 @@ const Details = () => {
         {subscriptionPlans.map((plan, index) => (
           <div
             key={index}
-            className="w-full md:w-[240px] lg:w-[320px] rounded-lg shadow-xl p-4 m-4 cursor-pointer bg-gray-50 hover:shadow-md flex flex-col items-center"
+            className="w-full md:w-[240px] lg:w-[340px] rounded-lg shadow-xl p-4 m-4 cursor-pointer bg-gray-50 hover:shadow-md flex flex-col items-center"
           >
             <div className="flex items-center">
               <div>
@@ -55,9 +55,9 @@ const Details = () => {
                 {plan.title}
               </h2>
             </div>
-            <ul className="text-black text-start mt-2">
+            <ul className="text-black text-start mt-3">
               {plan.features.map((feature, index) => (
-                <li key={index} className="mt-2 text-sm">
+                <li key={index} className="mt-3 text-base">
                   <FcApproval className="inline-block mr-3" />
                   {feature}
                 </li>
