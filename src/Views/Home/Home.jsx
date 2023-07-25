@@ -59,16 +59,16 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="mt-auto">
+      <div className="mt-10 bg-gray-100">
         <Services />
       </div>
-      <div>
+      <div lassName="mt-10">
         <Metodology />
       </div>
-      <div>
+      <div className="mt-10 bg-gray-100">
         <PricesWarranty />
       </div>
-      <div>
+      <div className="mt-10">
         <About />
       </div>
     </div>

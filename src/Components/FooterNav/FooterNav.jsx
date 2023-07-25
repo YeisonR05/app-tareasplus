@@ -6,8 +6,15 @@ import { FaTiktok } from 'react-icons/fa';
 import Logo from "../../Multimedia/Logo.png";
 
 function NavItem({ href, text }) {
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <NavLink to={href} className="flex my-5">
+    <NavLink to={href} className="flex my-5" onClick={handleClick}>
       {text}
     </NavLink>
   );

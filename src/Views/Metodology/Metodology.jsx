@@ -23,7 +23,7 @@ const Metodology = () => {
     <div className="flex flex-col md:flex-row">
       <div className="md:w-1/2">
         <div className="p-4">
-          <div className="w-full h-[300px] md:h-[550px] mx-autocursor-pointer">
+          <div className="w-full h-[300px] md:h-[600px] mx-autocursor-pointer">
               <img
                 src={FotoMetodology}
                 alt="TAREASPLUS"
@@ -52,7 +52,7 @@ const Metodology = () => {
             </ul>
             <ul className="text-black text-start mt-2">
               {plan.features.map((feature, index) => (
-                <li key={index} className="mt-6 text-xl flex items-center">
+                <li key={index} className="mt-6 text-base flex items-center">
                   <BsCheckCircle className="inline-block mr-3 rounded-full bg-[#18E4BE]" />
                   {feature}
                 </li>
